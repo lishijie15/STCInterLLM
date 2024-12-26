@@ -24,19 +24,5 @@ STInterLLM is compatible with PyTorch==2.0.1 versions.
 
 All neural networks are implemented using PyTorch and trained on 8 NVIDIA A800 80GB GPUs / 8 NVIDIA H100 80GB GPUs.
 
-Please code as below to install some nesessary libraries.
-
-```
-pip install 
-```
-
-
-
-#### Run Our Model
-
-To run our model, please execute the following code in the directory as `./`.
-
-```
-bash causalgpt_train.sh
-```
+We will organize the complete code as soon as possible and make it publicly available.
 
