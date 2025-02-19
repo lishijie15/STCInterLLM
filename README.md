@@ -2,7 +2,7 @@
 
 Shijie Li, He Li, Xiaojing Li, Yong Xu,  Zhenhong Lin, Huaiguang Jiang*  (*Correspondence)<br />
 
-[School of Future Technolog](https://www2.scut.edu.cn/ft/main.htm)@[South China University of Technolog](https://www.scut.edu.cn/en/)
+[School of Future Technology](https://www2.scut.edu.cn/ft/main.htm)@[South China University of Technology](https://www.scut.edu.cn/en/)
 
 -----
 
@@ -179,7 +179,7 @@ num_gpus=8
 python ./urbangpt/eval/test_stcinterllm.py --model-name ${output_model}  --prompting_file ${datapath} --st_data_path ${st_data_path} --output_res_path ${res_path} --start_id ${start_id} --end_id ${end_id} --num_gpus ${num_gpus}
 ```
 
-#### 4.3. Evaluation Metric Calculation <a href='#all_catelogue'>[Back to Top]</a>
+#### 4.3. Evaluation Metric Calculation
 
 <span id='Evaluation Metric Calculation'/>
 
