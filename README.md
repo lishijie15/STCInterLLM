@@ -109,14 +109,14 @@ Please follow the instructions to prepare the checkpoints.
 ```shell
 # to fill in the following path to run our STCInterLLM!
 model_path=./checkpoints/vicuna-7b-v1.5-16k
-instruct_ds=./ST_data_urbangpt/train_10pv/train_10pv_only.json
-st_data_path=./ST_data_urbangpt/train_10pv/train_pv10_only.pkl
+instruct_ds=./ST_data/train_10pv/train_10pv_only.json
+st_data_path=./ST_data/train_10pv/train_pv10_only.pkl
 pretra_ste=Causal_Encoder
 output_model=./checkpoints/Causal_Encoder_7b_pv10
 
 wandb offline
 python -m torch.distributed.run --nnodes=1 --nproc_per_node=8 --master_port=20001 \
-    urbangpt/train/train_power.py \
+    stcinterllm/train/train_power.py \
     --model_name_or_path ${model_path} \
     --version v1 \
     --data_path ${instruct_ds} \
@@ -169,14 +169,14 @@ You could start the second stage tuning by filling blanks at [STCInterLLM_eval.s
 ```shell
 # to fill in the following path to evaluation!
 output_model=./checkpoints/Causal_Encoder_7b_pv10
-datapath=./ST_data_urbangpt/test_10pv/test_10pv_only.json
-st_data_path=./ST_data_urbangpt/test_10pv/test_pv10_only.pkl
+datapath=./ST_data/test_10pv/test_10pv_only.json
+st_data_path=./ST_data/test_10pv/test_pv10_only.pkl
 res_path=./result_test/Causal_Encoder_7b_pv10_
 start_id=0
 end_id=593208
 num_gpus=8
 
-python ./urbangpt/eval/test_stcinterllm.py --model-name ${output_model}  --prompting_file ${datapath} --st_data_path ${st_data_path} --output_res_path ${res_path} --start_id ${start_id} --end_id ${end_id} --num_gpus ${num_gpus}
+python ./stcinterllm/eval/test_stcinterllm.py --model-name ${output_model}  --prompting_file ${datapath} --st_data_path ${st_data_path} --output_res_path ${res_path} --start_id ${start_id} --end_id ${end_id} --num_gpus ${num_gpus}
 ```
 
 #### 3.3. Evaluation Metric Calculation
