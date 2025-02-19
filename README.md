@@ -2,7 +2,7 @@
 
 Shijie Li, He Li, Xiaojing Li, Yong Xu,  Zhenhong Lin, Huaiguang Jiang*  (*Correspondence)<br />
 
-[School of Future Technology](https://www2.scut.edu.cn/ft/main.htm)@[South China University of Technology](https://www.scut.edu.cn/en/)
+[School of Future Technology](https://www2.scut.edu.cn/ft/main.htm), @[South China University of Technology](https://www.scut.edu.cn/en/)
 
 -----
 
