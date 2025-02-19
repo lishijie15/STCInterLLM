@@ -162,7 +162,7 @@ python -m torch.distributed.run --nnodes=1 --nproc_per_node=8 --master_port=2000
 
 <span id='Running Evaluation'/>
 
-#### 4.2. Running Evaluation
+#### 3.2. Running Evaluation
 
 You could start the second stage tuning by filling blanks at [STCInterLLM_eval.sh](./STCInterLLM_eval.sh). There is an example as below: 
 
@@ -179,7 +179,7 @@ num_gpus=8
 python ./urbangpt/eval/test_stcinterllm.py --model-name ${output_model}  --prompting_file ${datapath} --st_data_path ${st_data_path} --output_res_path ${res_path} --start_id ${start_id} --end_id ${end_id} --num_gpus ${num_gpus}
 ```
 
-#### 4.3. Evaluation Metric Calculation
+#### 3.3. Evaluation Metric Calculation
 
 <span id='Evaluation Metric Calculation'/>
 
