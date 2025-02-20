@@ -1,6 +1,6 @@
 # STCInterLLM: Causal Intervention is Large Language Models Need for Large-scale Spatio-temporal Forecasting
 
-Shijie Li, He Li, Xiaojing Li, Yong Xu,  Zhenhong Lin, Huaiguang Jiang*  (*Correspondence)<br />
+Shijie Li, He Li, Xiaojing Li, Yong Xu, Zhenhong Lin, Huaiguang Jiang*  (*Corresponding author)<br />
 
 [School of Future Technology](https://www2.scut.edu.cn/ft/main.htm), @[South China University of Technology](https://www.scut.edu.cn/en/)
 
