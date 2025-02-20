@@ -98,7 +98,7 @@ Please follow the instructions to prepare the checkpoints.
   
 - `Spatio-temporal Train Data`:
 
-  To evaluate the effectiveness of the proposed model in predicting spatio-temporal patterns across different scenarios, we have constructed two distinct scale scenarios. Scenario 1 involves net load forecasting for large-scale PDSs, considering the integration of substantial Renewable Energy Sources(RES). Scenario 2 focuses on traffic flow prediction, taking into account factors such as crime rates. These data are organized in [train_data](./STCInterLLM/ST_data_STCInterLLM/train_data). Please download them and put them at ./STCInterLLM/ST_data/train_10pv
+  To evaluate the effectiveness of the proposed model in predicting spatio-temporal patterns across different scenarios, we have constructed two distinct scale scenarios. Scenario 1 involves net load forecasting for large-scale PDSs, considering the integration of substantial Renewable Energy Sources (RES). Scenario 2 focuses on traffic flow prediction, taking into account factors such as crime rates. These data are organized in [train_data](./STCInterLLM/ST_data_STCInterLLM/train_data). Please download them and put them at ./STCInterLLM/ST_data/train_10pv
 
 <span id='Instruction Tuning'/>
 
