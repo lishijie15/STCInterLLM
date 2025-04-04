@@ -87,6 +87,9 @@ pip install -r requirements.txt
 #### 2.1. Preparing Pre-trained Checkpoint
 
 STCInterLLM is trained based on following excellent existing models.
+
+It is worth noting that the provided examples are primarily designed for Scenario 1. To adapt to different scenarios, please use the corresponding files and modify scripts such as [Power_Llama.py](./STCILLM/model/Power_Llama.py) accordingly.
+
 Please follow the instructions to prepare the checkpoints.
 
 - `Vicuna`:
@@ -104,19 +107,19 @@ Please follow the instructions to prepare the checkpoints.
 
 #### 2.2. Instruction Tuning 
 
-* **Start tuning:** After the aforementioned steps, you could start the instruction tuning by filling blanks at [STCInterLLM_train.sh](./STCInterLLM_train.sh). There is an example as below: 
+* **Start tuning:** After the aforementioned steps, you could start the instruction tuning by filling blanks at [STCILLM_train.sh](./STCILLM_train.sh). There is an example as below: 
 
 ```shell
 # to fill in the following path to run our STCInterLLM!
 model_path=./checkpoints/vicuna-7b-v1.5-16k
-instruct_ds=./ST_data/train_10pv/train_10pv_only.json
-st_data_path=./ST_data/train_10pv/train_pv10_only.pkl
+instruct_ds=./ST_data/train_10pv/train_10pv.json  #multi_NYC.json
+st_data_path=./ST_data/train_10pv/train_10pv.pkl      #multi_NYC_pkl.pkl
 pretra_ste=Causal_Encoder
-output_model=./checkpoints/Causal_Encoder_7b_pv10
+output_model=./checkpoints/Causal_Encoder_7b_pv10_noNorm
 
 wandb offline
 python -m torch.distributed.run --nnodes=1 --nproc_per_node=8 --master_port=20001 \
-    stcinterllm/train/train_power.py \
+    STCILLM/train/train_power.py \
     --model_name_or_path ${model_path} \
     --version v1 \
     --data_path ${instruct_ds} \
@@ -164,24 +167,24 @@ python -m torch.distributed.run --nnodes=1 --nproc_per_node=8 --master_port=2000
 
 #### 3.2. Running Evaluation
 
-You could start the second stage tuning by filling blanks at [STCInterLLM_eval.sh](./STCInterLLM_eval.sh). There is an example as below: 
+You could start the second stage tuning by filling blanks at [STCILLM_eval.sh](./STCILLM_eval.sh). There is an example as below: 
 
 ```shell
 # to fill in the following path to evaluation!
-output_model=./checkpoints/Causal_Encoder_7b_pv10
-datapath=./ST_data/test_10pv/test_10pv_only.json
-st_data_path=./ST_data/test_10pv/test_pv10_only.pkl
-res_path=./result_test/Causal_Encoder_7b_pv10_
+output_model=./checkpoints/Causal_Encoder_7b_pv10_noNorm
+datapath=./ST_data/test_10pv/test_10pv.json
+st_data_path=./ST_data/test_10pv/test_10pv.pkl
+res_path=./result_test/Causal_Encoder_7b_pv10_noNorm_
 start_id=0
 end_id=593208
 num_gpus=8
 
-python ./stcinterllm/eval/test_stcinterllm.py --model-name ${output_model}  --prompting_file ${datapath} --st_data_path ${st_data_path} --output_res_path ${res_path} --start_id ${start_id} --end_id ${end_id} --num_gpus ${num_gpus}
+python ./STCILLM/eval/test_STCILLM_power.py --model-name ${output_model}  --prompting_file ${datapath} --st_data_path ${st_data_path} --output_res_path ${res_path} --start_id ${start_id} --end_id ${end_id} --num_gpus ${num_gpus}
 ```
 
 #### 3.3. Evaluation Metric Calculation
 
 <span id='Evaluation Metric Calculation'/>
 
-You can use [result_test.py](./metric_calculation/result_test.py) to calculate the performance metrics of the predicted results. 
+You can use [result_power.py](./metric_calculation/result_power.py) to calculate the performance metrics of the predicted results. 
 
