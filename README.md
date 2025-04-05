@@ -19,7 +19,7 @@ Spatio-temporal forecasting plays a crucial role in the dynamic perception of sm
 * To better adapt to various scenarios lacking high-quality data, we propose the STInterLLM, which integrates a novel encoder and instruction-tuning to achieve efficient and accurate large-scale spatio-temporal prediction while minimizing double hallucinations.
 * To precisely eliminate spurious spatio-temporal associations caused by adaptive graphs, we specifically design the lightweight causal inference and intervention mechanism named causal intervention encoder. This is integrated with multi-scale temporal feature extraction modules to help the encoder enable the LLM to understand and learn complex spatio-temporal evolution patterns.
 * To effectively mitigate hallucinations in the LLM, we construct a novel Chains-of-Action instruction-tuning and alignment module. By enforcing step-by-step decomposition and examples of predictive actions, ensuring that the LLM aligns with and comprehends the complex information provided by the proposed encoder.
-* To fully evaluate the performance of the model, we conduct extensive experiments based on the Power Distribution System(PDS) (Scenario 1) and NYC-taxi (Scenario 2) datasets. The proposed STInterLLM achieves SOTA performance across various spatio-temporal scenarios.
+* To fully evaluate the performance of the model, we conduct extensive experiments based on the Power Distribution System (PDS) (Scenario 1) and NYC-taxi (Scenario 2) datasets. The proposed STInterLLM achieves SOTA performance across various spatio-temporal scenarios.
 
 ## Getting Started
 
@@ -101,7 +101,7 @@ Please follow the instructions to prepare the checkpoints.
   
 - `Spatio-temporal Train Data`:
 
-  To evaluate the effectiveness of the proposed model in predicting spatio-temporal patterns across different scenarios, we have constructed two distinct scale scenarios. Scenario 1 involves net load forecasting for large-scale PDSs, considering the integration of substantial Renewable Energy Sources (RES). Scenario 2 focuses on traffic flow prediction, taking into account factors such as crime rates. These data are organized in [train_data](./STCInterLLM/ST_data_STCInterLLM/train_data). Please download them and put them at ./STCInterLLM/ST_data/train_10pv
+  To evaluate the effectiveness of the proposed model in predicting spatio-temporal patterns across different scenarios, we have constructed two distinct scale scenarios. Scenario 1 involves net load forecasting for large-scale PDSs, considering the integration of substantial Renewable Energy Sources (RES). Scenario 2 focuses on traffic flow prediction, taking into account factors such as crime rates. These data are organized in [train_data](./STCInterLLM/ST_data_STCInterLLM/train_data). Please download them and put them at ./STCInterLLM/ST_data/train_10pv.
 
 <span id='Instruction Tuning'/>
 
@@ -186,5 +186,4 @@ python ./STCILLM/eval/test_STCILLM_power.py --model-name ${output_model}  --prom
 
 <span id='Evaluation Metric Calculation'/>
 
-You can use [result_power.py](./metric_calculation/result_power.py) (for Scenario 1) to calculate the performance metrics of the predicted results. 
-
+You can use [result_power.py](./metric_calculation/result_power.py) (for Scenario 1) to calculate the performance metrics of the predicted results.
