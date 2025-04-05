@@ -161,7 +161,7 @@ python -m torch.distributed.run --nnodes=1 --nproc_per_node=8 --master_port=2000
 #### 3.1. Preparing Checkpoints and Data 
 
 * **Checkpoints:** You could try to evaluate STCInterLLM by using your own model or our released checkpoints.
-* **Data:** We split test sets for Scenario 1 and Scenario 2 datasets and make the instruction data for evaluation. Please refer to the [evaluating](./STCInterLLM_eval.sh).
+* **Data:** We split test sets for Scenario 1 and Scenario 2 datasets and make the instruction data for evaluation. Please refer to the [evaluating](./STCILLM_eval.sh).
 
 <span id='Running Evaluation'/>
 
@@ -186,5 +186,5 @@ python ./STCILLM/eval/test_STCILLM_power.py --model-name ${output_model}  --prom
 
 <span id='Evaluation Metric Calculation'/>
 
-You can use [result_power.py](./metric_calculation/result_power.py) to calculate the performance metrics of the predicted results. 
+You can use [result_power.py](./metric_calculation/result_power.py) (for Scenario 1) to calculate the performance metrics of the predicted results. 
 
