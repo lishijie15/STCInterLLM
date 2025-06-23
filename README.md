@@ -187,3 +187,19 @@ python ./STCILLM/eval/test_STCILLM_power.py --model-name ${output_model}  --prom
 <span id='Evaluation Metric Calculation'/>
 
 You can use [result_power.py](./metric_calculation/result_power.py) (for Scenario 1) to calculate the performance metrics of the predicted results.
+
+## BibTeX
+If you find our work useful in your research. Please consider giving a star ⭐ and citation 📚.
+
+```bash
+@ARTICLE{11017752,
+  author={Li, Shijie and Li, He and Li, Xiaojing and Xu, Yong and Lin, Zhenhong and Jiang, Huaiguang},
+  journal={IEEE Transactions on Cybernetics}, 
+  title={Causal Intervention Is What Large Language Models Need for Spatio-Temporal Forecasting}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-13},
+  doi={10.1109/TCYB.2025.3569333}
+}
+```
