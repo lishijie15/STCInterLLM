@@ -197,9 +197,9 @@ If you find our work useful in your research. Please consider giving a star ⭐ 
   journal={IEEE Transactions on Cybernetics}, 
   title={Causal Intervention Is What Large Language Models Need for Spatio-Temporal Forecasting}, 
   year={2025},
-  volume={},
-  number={},
-  pages={1-13},
+  volume={55},
+  number={8},
+  pages={3825-3837},
   doi={10.1109/TCYB.2025.3569333}
 }
 ```
